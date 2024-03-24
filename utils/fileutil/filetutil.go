@@ -5,7 +5,6 @@ import (
 	"bytes"
 	"fmt"
 	"os"
-	"path"
 	"path/filepath"
 	"strings"
 
@@ -103,7 +102,7 @@ func CompressDir(dir string) error {
 		if err != nil {
 			return err
 		}
-		name := path.Join(dir, f.Name())
+		name := filepath.Join(dir, f.Name())
 		content, err := os.ReadFile(name)
 		if err != nil {
 			return err
